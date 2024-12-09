@@ -57,7 +57,7 @@
 # CELL ********************
 
 from pyspark.sql.functions import max
-def checkIfWeNeedToRun ():
+
 
 # Path to Qualys File
         pthToFiles = "Files/raw/qualys"
@@ -95,7 +95,31 @@ def checkIfWeNeedToRun ():
         if first_processed_date_time > latest_data_date:
             print("We have new data and need to process it.")
             # Place any further processing logic here
-            getAllStandardTables()
+              run_functions_in_parallel(
+ 
+                    lambda: processSrcfilesAllFields("Files/raw/bfGlobalFixlets", "tblBigFixGlobalFixlets"),
+                    lambda: processSrcfilesAllFields("Files/raw/bfHardware", "tblBigFixHardware"),
+                    lambda: processSrcfilesAllFields("Files/raw/uhc", "tblUhc"),
+                    lambda: getVulnSrcSubset(["solution"],"tblVulnExtSolution","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["results"],"tblVulnExtResults","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["impact"],"tblVulnExtImpact","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["diagnosis"],"tblVulnExtDiagnosis","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["product"],"tblVulnExtProduct","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["CVE"],"tblVulnExtCve","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["bugtraq_ids"],"tblVulnExtBugTraq","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["category"],"tblVulnExtBugCategory","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["explt_concat"],"tblVulnExtBugExpltConcat","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["malware_concat"],"tblVulnExtBugMalware","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["vendorReference"],"tblVulnExtVendorReference","Files/raw/qualys"),
+                    lambda: getVulnSrcSubset(["vendor"],"tblVulnExtVendor","Files/raw/qualys"),
+                    lambda: setUpVulnData(),
+                    lambda: getscandetail(),
+                    lambda: setUpHostData(),
+                    lambda: setUpAtlasAppHardware(),
+                    lambda: getKpAnalysisData(),
+                    lambda: getJiraData()
+                    
+                )
             print(f"---------------------------------------------")
             print(f" Bronze Layer completed")
             print(f"---------------------------------------------")
@@ -141,21 +165,6 @@ def checkIfWeNeedToRun ():
 
             print("No new data. Exiting.")
 
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-
-checkIfWeNeedToRun ()
-
-
-please upload to lakehouse
 
 # METADATA ********************
 

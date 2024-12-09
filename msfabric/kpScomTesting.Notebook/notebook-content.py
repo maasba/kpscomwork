@@ -61,6 +61,7 @@
 
 # CELL ********************
 
+"""
   # Perform actions if the table exists
 print("The table exists. Proceeding with further operations.")
 
@@ -81,7 +82,68 @@ data_date_status = dfScanDetail \
 
 print(f"Latest Data date : {data_date_status}")
 update_column_value_in_table("tblscandetail", "dataDateStatus", data_date_status, "Latest")
+  
+
+
+
+    displayDataFrame(df)
+"""
         
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+from pyspark.sql.functions import col, lower, when
+
+from pyspark.sql.functions import col, lower, regexp_replace, when
+
+# Path to the files
+pthToFiles = "Files/raw/bfGlobalFixlets/bfGlobalFixlets"
+
+# Read the parquet file
+df = spark.read.parquet(pthToFiles)
+
+# Preprocess the `name` column to remove irrelevant substrings when determining `oscategory`
+df = df.withColumn(
+    "processed_name",
+    regexp_replace(lower(col("name")), "(x86|x64|x32|\\s+-\\s+.*)", "")  # Remove architectures and unrelated text after "-"
+)
+
+# Define the logic for the oscategory column based on the processed name
+df = df.withColumn(
+    "oscategory",
+    when(
+        lower(col("processed_name")).like("%win%"),
+        "windows"
+    ).when(
+        lower(col("processed_name")).like("%redhat%") | lower(col("processed_name")).like("%rhel%"), "redhat9")
+    ).when(
+        lower(col("processed_name")).like("%redhat%") | lower(col("processed_name")).like("%rhel%"),
+        when(lower(col("processed_name")).like("%6%"), "redhat6")
+        .when(lower(col("processed_name")).like("%7%"), "redhat7")
+        .when(lower(col("processed_name")).like("%8%"), "redhat8")
+        .when(lower(col("processed_name")).like("%9%"), "redhat9")
+        .otherwise("redhat")
+    ).otherwise("other")  # Default case for unknown oscategory
+)
+
+# Drop the processed_name column to ensure it is not used further
+df = df.drop("processed_name")
+
+# Select only the name and oscategory columns
+result_df = df.select("name", "oscategory")
+
+# Filter the DataFrame to only include rows where oscategory is like 'redhat%' or 'centos%'
+filtered_df = result_df.filter(lower(col("oscategory")).like("redhat%"))
+
+# Display the filtered DataFrame
+displayDataFrame(filtered_df)
 
 # METADATA ********************
 

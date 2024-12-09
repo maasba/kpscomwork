@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "smQualys"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1b5f5a9e-5997-4033-9cad-543910876747"
+  }
+}

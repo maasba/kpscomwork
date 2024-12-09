@@ -1,0 +1,90 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "ace43e1b-866a-4e00-a24b-b9997ff19815",
+          "pipelineId": "a77f9e0f-54d7-46ef-9398-81eb5f98d5e5",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "6ef00c0f-1799-4b7a-a657-d94b8d252594"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "invokeImportOfKpomData",
+        "dependsOn": []
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "ace43e1b-866a-4e00-a24b-b9997ff19815",
+          "pipelineId": "e062d89a-4139-45a6-adc1-664929ff52ce",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "6ef00c0f-1799-4b7a-a657-d94b8d252594"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "invokeImportOfKBigFixData",
+        "dependsOn": []
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "ace43e1b-866a-4e00-a24b-b9997ff19815",
+          "pipelineId": "d1df34cd-2811-4e16-8b6c-61fef495a360",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "6ef00c0f-1799-4b7a-a657-d94b8d252594"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "invokeImportOfKOdwData",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "9323f611-e3e5-42cc-ab0b-0a9600e34f49",
+          "workspaceId": "ace43e1b-866a-4e00-a24b-b9997ff19815",
+          "notifyOption": "NoNotification"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Jira and Analysis Data",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 4
+  }
+}

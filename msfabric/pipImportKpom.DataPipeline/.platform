@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pipImportKpom"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a77f9e0f-54d7-46ef-9398-81eb5f98d5e5"
+  }
+}

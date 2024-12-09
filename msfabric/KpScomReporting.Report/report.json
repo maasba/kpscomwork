@@ -1,0 +1,107 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.59\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "86ae0054ad6843b9153c",
+      "ordinal": 1,
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d7175e224a420370b1c5",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0c79a7eb010eecbcb179\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1000,\"y\":0,\"z\":6002,\"width\":207.99999999999997,\"height\":136,\"tabOrder\":6002}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimScanDetail.dataDateStatus\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimScanDetail\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dataDateStatus\"},\"Name\":\"dimScanDetail.dataDateStatus\",\"NativeReferenceName\":\"dataDateStatus\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimScanDetail\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dataDateStatus\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Latest'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 136.00,
+          "width": 208.00,
+          "x": 1000.00,
+          "y": 0.00,
+          "z": 6002.00
+        },
+        {
+          "config": "{\"name\":\"35eae011e06e09e27b02\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":3000,\"width\":256,\"height\":80,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimVulnerabilities.qid\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimVulnerabilities\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"qid\"},\"Name\":\"dimVulnerabilities.qid\",\"NativeReferenceName\":\"qid\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 80.00,
+          "width": 256.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7585c6eca0007060a730\",\"layouts\":[{\"id\":0,\"position\":{\"x\":304,\"y\":0,\"z\":4000,\"width\":103.99999999999999,\"height\":152,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"dimScanDetail.status\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimScanDetail\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"status\"},\"Name\":\"dimScanDetail.status\",\"NativeReferenceName\":\"status\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimScanDetail\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"status\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Active'\"}}],[{\"Literal\":{\"Value\":\"'New'\"}}],[{\"Literal\":{\"Value\":\"'Re-Opened'\"}}]]}}}]}}}}],\"layout\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"style\":{\"expr\":{\"Literal\":{\"Value\":\"'Cards'\"}}},\"maxTiles\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"cellPadding\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}],\"selectionIcon\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"padding\":[{\"properties\":{\"paddingSelection\":{\"expr\":{\"Literal\":{\"Value\":\"'Narrow'\"}}}},\"selector\":{\"id\":\"default\"}}],\"shadowCustom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"glowCustom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"accentBar\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0.6}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"underline\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"spacing\":[{\"properties\":{\"verticalSpacing\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 152.00,
+          "width": 104.00,
+          "x": 304.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"859947a9981830000001\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":80,\"z\":6000,\"width\":256,\"height\":80,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"lkupvulnjiranumbers.jiraNumbers\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"lkupvulnjiranumbers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"jiraNumbers\"},\"Name\":\"lkupvulnjiranumbers.jiraNumbers\",\"NativeReferenceName\":\"jiraNumbers\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 80.00,
+          "width": 256.00,
+          "x": 0.00,
+          "y": 80.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"896f43f9062b06dee245\",\"layouts\":[{\"id\":0,\"position\":{\"x\":744,\"y\":0,\"z\":6001,\"width\":207.99999999999997,\"height\":136,\"tabOrder\":6001}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimVulnerabilities.kpAnalysis_Disposition\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimVulnerabilities\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"kpAnalysis_Disposition\"},\"Name\":\"dimVulnerabilities.kpAnalysis_Disposition\",\"NativeReferenceName\":\"kpAnalysis_Disposition\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimVulnerabilities\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"kpAnalysis_Disposition\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Treatment'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 136.00,
+          "width": 208.00,
+          "x": 744.00,
+          "y": 0.00,
+          "z": 6001.00
+        },
+        {
+          "config": "{\"name\":\"91d172944b08b76e6178\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":0,\"z\":2000,\"width\":224,\"height\":136,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"lkupvulncve.qualysCve\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"lkupvulncve\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"qualysCve\"},\"Name\":\"lkupvulncve.qualysCve\",\"NativeReferenceName\":\"qualysCve\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 136.00,
+          "width": 224.00,
+          "x": 440.00,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"ca51442e9c4bc75ae034\",\"layouts\":[{\"id\":0,\"position\":{\"x\":8,\"y\":223.99999999999997,\"z\":0,\"width\":1272,\"height\":496,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"dimVulnerabilities.qid\"},{\"queryRef\":\"dimScanDetail.cfVulnStatus\"},{\"queryRef\":\"dimVulnerabilities.title\"},{\"queryRef\":\"dimVulnerabilities.jiraNumbers\"},{\"queryRef\":\"dimVulnerabilities.cfTreatmentStatuses\"},{\"queryRef\":\"dimVulnerabilities.cfTreatmentDispostion\"},{\"queryRef\":\"dimScanDetail.cfVulnSeverities\"},{\"queryRef\":\"dimHost.cfHostList\"},{\"queryRef\":\"dimHost.cfHostEnvironment\"},{\"queryRef\":\"dimHost.cfHostOs\"},{\"queryRef\":\"dimHost.cfmanagedBy\"},{\"queryRef\":\"dimHost.cfAppID\"},{\"queryRef\":\"dimHost.cfAppName\"},{\"queryRef\":\"dimHost.cfAppmanager\"},{\"queryRef\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionSoftwareVersion\"},{\"queryRef\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionUrl\"},{\"queryRef\":\"dimVulnerabilities.cfQualysCve\"},{\"queryRef\":\"dimVulnerabilitySolutions.TrimmedSolution\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimVulnerabilities\",\"Type\":0},{\"Name\":\"d2\",\"Entity\":\"dimHost\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dimScanDetail\",\"Type\":0},{\"Name\":\"d3\",\"Entity\":\"dimVulnerabilitySolutions\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"qid\"},\"Name\":\"dimVulnerabilities.qid\",\"NativeReferenceName\":\"qid\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"jiraNumbers\"},\"Name\":\"dimVulnerabilities.jiraNumbers\",\"NativeReferenceName\":\"Jira\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfHostList\"},\"Name\":\"dimHost.cfHostList\",\"NativeReferenceName\":\"Hosts\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfHostEnvironment\"},\"Name\":\"dimHost.cfHostEnvironment\",\"NativeReferenceName\":\"Environments\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"title\"},\"Name\":\"dimVulnerabilities.title\",\"NativeReferenceName\":\"Qid Title\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfmanagedBy\"},\"Name\":\"dimHost.cfmanagedBy\",\"NativeReferenceName\":\"ManagedBy\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfAppID\"},\"Name\":\"dimHost.cfAppID\",\"NativeReferenceName\":\"Kp App ID\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"cfVulnSeverities\"},\"Name\":\"dimScanDetail.cfVulnSeverities\",\"NativeReferenceName\":\"Severities\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"cfVulnStatus\"},\"Name\":\"dimScanDetail.cfVulnStatus\",\"NativeReferenceName\":\"Vuln Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"cfTreatmentStatuses\"},\"Name\":\"dimVulnerabilities.cfTreatmentStatuses\",\"NativeReferenceName\":\"Treatment Statuses\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d3\"}},\"Property\":\"TrimmedSolution\"},\"Name\":\"dimVulnerabilitySolutions.TrimmedSolution\",\"NativeReferenceName\":\"Qualys Solution\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d3\"}},\"Property\":\"cfkpAnalysisSolutionUrl\"},\"Name\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionUrl\",\"NativeReferenceName\":\"Kp Solution Download URL\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d3\"}},\"Property\":\"cfkpAnalysisSolutionSoftwareVersion\"},\"Name\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionSoftwareVersion\",\"NativeReferenceName\":\"Kp Solution Software Version\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"cfQualysCve\"},\"Name\":\"dimVulnerabilities.cfQualysCve\",\"NativeReferenceName\":\"Qualys Cve\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfAppName\"},\"Name\":\"dimHost.cfAppName\",\"NativeReferenceName\":\"Kp App Name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfAppmanager\"},\"Name\":\"dimHost.cfAppmanager\",\"NativeReferenceName\":\"cfAppmanager\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"cfTreatmentDispostion\"},\"Name\":\"dimVulnerabilities.cfTreatmentDispostion\",\"NativeReferenceName\":\"Kp Treatment Dispostion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d2\"}},\"Property\":\"cfHostOs\"},\"Name\":\"dimHost.cfHostOs\",\"NativeReferenceName\":\"Host Os\"}]},\"columnProperties\":{\"dimVulnerabilities.jiraNumbers\":{\"displayName\":\"Jira\"},\"dimHost.cfHostList\":{\"displayName\":\"Hosts\"},\"dimHost.cfHostEnvironment\":{\"displayName\":\"Environments\"},\"dimHost.cfmanagedBy\":{\"displayName\":\"ManagedBy\"},\"dimHost.cfAppID\":{\"displayName\":\"Kp App ID\"},\"dimVulnerabilities.title\":{\"displayName\":\"Qid Title\"},\"dimScanDetail.cfVulnSeverities\":{\"displayName\":\"Severities\"},\"dimScanDetail.cfVulnStatus\":{\"displayName\":\"Vuln Status\"},\"dimVulnerabilities.cfTreatmentStatuses\":{\"displayName\":\"Treatment Statuses\"},\"dimVulnerabilitySolutions.cfkpAnalysisSolutionSoftwareVersion\":{\"displayName\":\"Kp Solution Software Version\"},\"dimVulnerabilitySolutions.cfkpAnalysisSolutionUrl\":{\"displayName\":\"Kp Solution Download URL\"},\"dimVulnerabilitySolutions.TrimmedSolution\":{\"displayName\":\"Qualys Solution\"},\"dimVulnerabilities.cfQualysCve\":{\"displayName\":\"Qualys Cve\"},\"dimHost.cfAppName\":{\"displayName\":\"Kp App Name\"},\"dimVulnerabilities.cfTreatmentDispostion\":{\"displayName\":\"Kp Treatment Dispostion\"},\"dimHost.cfHostOs\":{\"displayName\":\"Host Os\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"54D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.qid\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"81.63945521060164D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.jiraNumbers\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"274.28327556240674D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfHostList\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"168.21337975103586D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfHostEnvironment\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"200.8330577804636D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.title\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"169.80722474974885D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfmanagedBy\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"145.09470371125053D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfAppID\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"103D\"}}}},\"selector\":{\"metadata\":\"dimScanDetail.cfVulnSeverities\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"84D\"}}}},\"selector\":{\"metadata\":\"dimScanDetail.cfVulnStatus\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"129D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.cfTreatmentStatuses\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"1251D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilitySolutions.TrimmedSolution\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"334.636810832436D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionUrl\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"227D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilitySolutions.cfkpAnalysisSolutionSoftwareVersion\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"551.4474958437233D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.cfQualysCve\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"1251D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfAppName\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"1251D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfAppmanager\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"143D\"}}}},\"selector\":{\"metadata\":\"dimVulnerabilities.cfTreatmentDispostion\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"484.52839004312295D\"}}}},\"selector\":{\"metadata\":\"dimHost.cfHostOs\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"columnHeaders\":[{\"properties\":{\"autoSizeColumnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}}},\"selector\":{\"metadata\":\"dimHost.cfHostList\"}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimVulnerabilities\"}},\"Property\":\"qid\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimVulnerabilities\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"qid\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 496.00,
+          "width": 1272.00,
+          "x": 8.00,
+          "y": 224.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

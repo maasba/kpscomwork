@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "lhVulnReportingKpScom",
+    "description": "This is the lakehouse that is used for all the reporting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4b0581ca-957b-45c9-825e-031767437902"
+  }
+}

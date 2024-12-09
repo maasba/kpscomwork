@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "KpScomReporting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "975c31e2-8ec0-41dd-a7f2-0d7c6a3b74e0"
+  }
+}

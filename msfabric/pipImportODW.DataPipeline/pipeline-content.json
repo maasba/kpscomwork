@@ -1,0 +1,81 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SqlServerSource",
+            "sqlReaderQuery": "SELECT [APP ID]\n      ,[ENT ID]\n      ,[Activity Based Costing Identifier]\n      ,[Application Short Name]\n      ,[Application Name]\n      ,[ICT Object Name]\n      ,[Application Version]\n      ,[Application Status]\n      ,[Application Support Code]\n      ,[Application Owning Organization]\n      ,[Application Owning Sub Organization]\n      ,[Application Manager]\n      ,[Server Name]\n      ,[SOX Test Ready]\n      ,[SOX Indicator]\n      ,[Server Role]\n      ,[Server Status]\n      ,[Fully Qualified Domain Name]\n      ,[Server Domain]\n      ,[IP Address]\n      ,[Server Serial Number]\n      ,[Location]\n      ,[Location Code]\n      ,[Server Platform]\n      ,[Operating System]\n      ,[Operating System Build Number]\n      ,[Deployment Type]\n      ,[Deployment Comments]\n      ,[Deployment Status]\n      ,[RunSourceID]\n      ,[FileDate]\n      ,[IT Counterpart]\n      ,[Server Primary Application POC]\n      ,[Server Secondary Application POC]\n      ,[Infrastructure Support]\n      ,[Using Regions]\n      ,[Server Subject to PCI Compliance]\n      ,[Personally Identifiable Information]\n      ,[Primary IP Address]\n      ,[Component Version]\n      ,[Component Name]\n      ,[Component Flag]\n      ,[Resiliency Tier]\n      ,[Business Required RTO]\n      ,[Business Required RPO]\n      ,[Recovery Time Capability]\n      ,[Recovery Point Capability]\n      ,[DR Enabled]\n      ,[Application Owning Org Level 2]\n      ,[Application Owning Org Level 3]\n      ,[Owning Org Level 1 Manager]\n      ,[Owning Org Level 2 Manager]\n      ,[Owning Org Level 3 Manager]\n      ,[Server Subject to HIPAA Compliance]\n      ,[Server Nature]\n      ,[Application Owning Org Level 0]\n      ,[Application Owning Org Level 1]\n      ,[Product Name]\n      ,[Server Subject to SOX Compliance]\n      ,[Deployment ID]\n      ,[Deployment Name]\n      ,[Device Type]\n      ,[MAC Address]\n      ,[Primary MAC Address]\n      ,[Member of Cluster]\n      ,[Number of CPU]\n      ,[CPU Speed]\n      ,[CPU Type]\n      ,[Asset Tag]\n      ,[Source Unique Identifier]\n      ,[Server Last Scan Date]\n      ,[Server Description]\n      ,[Primary ABC ID]\n      ,[Regulatory/Customer Audits]\n      ,[Server PII (Personally Identifiable Information)]\n      ,[Application Owning Org Level 4]\n      ,[Application Owning Org Level 5]\n      ,[Application Owning Org Level 6]\n      ,[Owning Org Level 1 Executive]\n      ,[Owning Org Level 2 Executive]\n      ,[Owning Org Level 3 Executive]\n      ,[Owning Org Level 4 Executive]\n      ,[Owning Org Level 5 Executive]\n      ,[Owning Org Level 6 Executive]\n  FROM [APP_DW].[dbo].[vw_Latest_ATLAS_APPLICATION_HARDWARE]",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "SqlServerTable",
+              "typeProperties": {
+                "database": "APP_DW"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "4e2410fd-9674-4541-b9ab-b6eec2d7210b"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "formatSettings": {
+              "type": "ParquetWriteSettings",
+              "enableVertiParquet": true
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "Parquet",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "/raw",
+                  "fileName": "odwAtlasAppHardware"
+                },
+                "compressionCodec": "snappy"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "lhKpScom",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "45de4f89-754a-48e0-867f-37d78baaaa63",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "copyAtlasAppHardware",
+        "dependsOn": []
+      }
+    ]
+  }
+}

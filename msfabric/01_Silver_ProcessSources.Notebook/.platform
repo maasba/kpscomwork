@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "01_Silver_ProcessSources",
+    "description": "The second layer of processing the source data. This happens after all the initial files have been processed"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8500c57f-6862-4492-a87f-e9d696635fef"
+  }
+}

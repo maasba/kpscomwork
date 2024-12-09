@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "ImportKpScomData",
+    "description": "This data pipeline imports qualys  data. Right now that pull is from a sql server, but soon it should be changed to pull from a file"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7a56b4aa-0ff5-4e41-8860-0c5f95a74aac"
+  }
+}

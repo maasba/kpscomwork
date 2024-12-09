@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "KpScomVulnReporting_Gold"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1cb5a29b-41ab-463b-bcdd-bc3e4fb45f17"
+  }
+}

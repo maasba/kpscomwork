@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pipImportBigFix"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e062d89a-4139-45a6-adc1-664929ff52ce"
+  }
+}

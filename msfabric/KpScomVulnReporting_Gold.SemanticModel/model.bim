@@ -61,84 +61,84 @@
       {
         "name": "a6e5cc78-64ad-7739-0936-679fe48ca351",
         "fromColumn": "host_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimHost"
       },
       {
         "name": "61cf46fa-7805-ac76-61f9-83457edabfa9",
         "fromColumn": "cve_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitycve"
       },
       {
         "name": "fb51daed-2577-623d-7775-d639cb3a8ab5",
         "fromColumn": "bugtraq_ids_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitybugtraq"
       },
       {
         "name": "dfbe65cf-a979-3444-6787-c8466368793a",
         "fromColumn": "results_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilityResults"
       },
       {
         "name": "55bdd13a-f2ba-c304-9043-b555c9c359b3",
         "fromColumn": "solution_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitySolutions"
       },
       {
         "name": "bf6fc726-bb84-76f8-5b27-b50e1cd52e16",
         "fromColumn": "diagnosis_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitydiagnosis"
       },
       {
         "name": "18d0f4a6-5fd0-7465-3b16-ebe4f33fef21",
         "fromColumn": "impact_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilityimpact"
       },
       {
         "name": "616c8e56-8f19-5b8a-e184-3a9886279e25",
         "fromColumn": "product_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilityproduct"
       },
       {
         "name": "2137a2e4-bc99-a72e-fec9-b37aca7df3f3",
         "fromColumn": "bugCategory_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitybugcategories"
       },
       {
         "name": "29ae6d46-29e5-e4b4-f21a-59ca284b08e3",
         "fromColumn": "explt_concat_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilitybugexploitsconcantenated"
       },
       {
         "name": "0f5e0cb5-9e33-0229-251b-90e4f2c79345",
         "fromColumn": "vendorref_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilityVendorreference"
       },
       {
         "name": "16e38a4c-8c30-e0ae-38f3-c7d059c36a5f",
         "fromColumn": "vendor_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilityVendor"
       },
@@ -225,7 +225,7 @@
       {
         "name": "c4fe9f46-f4bf-8378-2675-342fefd32544",
         "fromColumn": "qid_hash",
-        "fromTable": "dimScanDetail",
+        "fromTable": "factScanDetail",
         "toColumn": "uuid_hash",
         "toTable": "dimVulnerabilities"
       }
@@ -374,7 +374,7 @@
               "LEFT(",
               "    CALCULATE(",
               "        MAX(dimVulnerabilityResults[results]),",
-              "        CROSSFILTER(dimScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH)",
+              "        CROSSFILTER(factScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH)",
               "    ),",
               "    2000",
               ")"
@@ -400,7 +400,7 @@
               "        \" | \",",
               "        dimVulnerabilityResults[detectedSoftwareVersion]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "14bab8fc-df64-4048-b02a-688b6e20abd9"
@@ -421,7 +421,7 @@
         "sourceLineageTag": "[dbo].[g_tblresults]"
       },
       {
-        "name": "dimScanDetail",
+        "name": "factScanDetail",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -1106,8 +1106,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    MAX(dimScanDetail[host_hash]),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH),",
+              "    MAX(factScanDetail[host_hash]),",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH),",
               "    dimHost[uuid_hash] <> BLANK()",
               ")"
             ],
@@ -1123,8 +1123,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    MAX(dimScanDetail[qid_hash]),",
-              "    CROSSFILTER(dimScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH),",
+              "    MAX(factScanDetail[qid_hash]),",
+              "    CROSSFILTER(factScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH),",
               "    dimVulnerabilities[uuid_hash] <> BLANK()",
               ")"
             ],
@@ -1140,8 +1140,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    MAX(dimScanDetail[results_hash]),",
-              "    CROSSFILTER(dimScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH),",
+              "    MAX(factScanDetail[results_hash]),",
+              "    CROSSFILTER(factScanDetail[results_hash], dimVulnerabilityResults[uuid_hash], BOTH),",
               "    dimVulnerabilityResults[uuid_hash] <> BLANK()",
               ")"
             ],
@@ -1157,8 +1157,8 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    MAX(dimScanDetail[solution_hash]),",
-              "    CROSSFILTER(dimScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH),",
+              "    MAX(factScanDetail[solution_hash]),",
+              "    CROSSFILTER(factScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH),",
               "    dimVulnerabilitySolutions[uuid_hash] <> BLANK()",
               ")"
             ],
@@ -1178,8 +1178,8 @@
             "expression": [
               "",
               "CONCATENATEX(",
-              "    DISTINCT(dimScanDetail[severity]),",
-              "    dimScanDetail[severity],",
+              "    DISTINCT(factScanDetail[severity]),",
+              "    factScanDetail[severity],",
               "    \" | \"",
               ")"
             ],
@@ -1199,17 +1199,39 @@
             "expression": [
               "",
               "CONCATENATEX(",
-              "    DISTINCT(dimScanDetail[status]),",
-              "    dimScanDetail[status],",
+              "    DISTINCT(factScanDetail[status]),",
+              "    factScanDetail[status],",
               "    \" | \"",
               ")"
             ],
             "lineageTag": "c1793672-70a2-4d96-8c51-f239bcaa4779"
+          },
+          {
+            "name": "cfVulnCount",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              },
+              {
+                "property": "Description"
+              }
+            ],
+            "description": "A count of vulnerabilities ",
+            "displayFolder": "_measures",
+            "expression": [
+              "",
+              "COUNT(factScanDetail[qid_hash])"
+            ],
+            "formatString": "0",
+            "lineageTag": "22dc6464-bb0f-4875-8c1d-a71514872490"
           }
         ],
         "partitions": [
           {
-            "name": "dimScanDetail",
+            "name": "factScanDetail",
             "mode": "directLake",
             "source": {
               "entityName": "tblscandetail",
@@ -1329,7 +1351,7 @@
               "LEFT(",
               "    CALCULATE(",
               "        MAX(dimVulnerabilitySolutions[solution]),",
-              "        CROSSFILTER(dimScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
+              "        CROSSFILTER(factScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
               "    ),",
               "    2000",
               ")"
@@ -1355,7 +1377,7 @@
               "        \" | \",",
               "        dimVulnerabilitySolutions[kpAnalysisURL]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "c826f6f5-eaa2-4392-93e7-9a4c2be95e4c"
@@ -1379,7 +1401,7 @@
               "        \" | \",",
               "        dimVulnerabilitySolutions[kpAnalysisSoftwareVersion]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "0efed012-ad56-4fb7-ac6a-254101b706b9"
@@ -1403,7 +1425,7 @@
               "        \" | \",",
               "        dimVulnerabilitySolutions[kpAnalysisCategory]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[solution_hash], dimVulnerabilitySolutions[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "f9d06154-da99-436f-86ae-b75b2e44c34a"
@@ -1442,16 +1464,18 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "User"
+                "value": "Automatic"
               }
             ],
             "changedProperties": [
               {
                 "property": "SummarizeBy"
+              },
+              {
+                "property": "DataType"
               }
             ],
-            "dataType": "int64",
-            "formatString": "0",
+            "dataType": "string",
             "lineageTag": "aaae81e1-2544-43fc-be7f-129fb71fd99d",
             "sourceColumn": "qid",
             "sourceLineageTag": "qid",
@@ -2075,7 +2099,7 @@
               "        \" | \",",
               "        dimVulnerabilities[treatmentStatuses]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "a2124046-3598-41d2-933d-6dbe15e83af7"
@@ -2099,7 +2123,7 @@
               "        \" | \",",
               "        dimVulnerabilities[qualysCve]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "640350ba-22c6-4fb1-8ea3-c07d36a483e8"
@@ -2123,10 +2147,31 @@
               "        \" | \",",
               "        dimVulnerabilities[kpAnalysis_Disposition]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "125dc14f-a5b7-416f-871d-1738d0369671"
+          },
+          {
+            "name": "cfTreatmentCount",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "_measures",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(dimVulnerabilities[kpAnalysis_Treatment_ID]),",
+              "    CROSSFILTER(factScanDetail[qid_hash], dimVulnerabilities[uuid_hash], BOTH)",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "5514f318-a489-4ce9-9a10-d5c23c46fe44"
           }
         ],
         "partitions": [
@@ -3450,7 +3495,7 @@
               "        \" | \",",
               "         dimHost[atlasEnvironment]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "143a51a8-6161-4b94-97a4-a6a33105d9b3"
@@ -3463,8 +3508,12 @@
               },
               {
                 "property": "DisplayFolder"
+              },
+              {
+                "property": "Description"
               }
             ],
+            "description": "This is the untrimmed list of hosts. Shows a concantenated list of all hosts",
             "displayFolder": "_Measures",
             "expression": [
               "",
@@ -3475,7 +3524,7 @@
               "        \" | \",",
               "        dimHost[hostname]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "acc0634b-ee47-4106-bba6-5d2014a87e71"
@@ -3500,7 +3549,7 @@
               "        \" | \",",
               "        dimHost[managedBy]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "8ae57e63-5267-4745-b894-b6d18c0ee6db"
@@ -3525,7 +3574,7 @@
               "        \" | \",",
               "        dimHost[atlasAppId]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               ")"
             ],
             "lineageTag": "4cf3742f-6ce6-4ade-832b-9982cf34949e"
@@ -3551,7 +3600,7 @@
               "        \" | \",",
               "        dimHost[atlasApplicationName]",
               "    ),",
-              "    CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               "),",
               "",
               "    2500",
@@ -3580,7 +3629,7 @@
               "            \" | \",",
               "            dimHost[atlasApplicationManager]",
               "        ),",
-              "        CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "        CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               "    ),",
               "    2500",
               ")"
@@ -3608,12 +3657,65 @@
               "            \" | \",",
               "            dimHost[OSName]",
               "        ),",
-              "        CROSSFILTER(dimScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "        CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
               "    ),",
               "    2500",
               ")"
             ],
             "lineageTag": "b1eefaa0-7e09-45d6-828b-265a72cb6c8a"
+          },
+          {
+            "name": "cfHosts",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              },
+              {
+                "property": "Description"
+              }
+            ],
+            "description": "This is a trimmed list. max of 2500 characters. Best used when shown in the detail report",
+            "displayFolder": "_measures",
+            "expression": [
+              "",
+              "LEFT(",
+              "    CALCULATE(",
+              "        CONCATENATEX(",
+              "            DISTINCT(dimHost[hostname]),",
+              "            dimHost[hostname],",
+              "            \" | \",",
+              "            dimHost[hostname]",
+              "        ),",
+              "        CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              "    ),",
+              "    2500",
+              ")"
+            ],
+            "lineageTag": "b64aa039-f571-42f1-b716-893253a3187c"
+          },
+          {
+            "name": "cfHostCount",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "_measures",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    DISTINCTCOUNT(dimHost[hostname]),",
+              "    CROSSFILTER(factScanDetail[host_hash], dimHost[uuid_hash], BOTH)",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "8ac06d50-b415-40be-a693-e0cd872f881e"
           }
         ],
         "partitions": [
